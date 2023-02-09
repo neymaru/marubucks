@@ -10,7 +10,6 @@ body {
   font-weight: 400px;
   line-height: 1.4;
   font-family: "Nanum Gothic", sans-serif;
-  height: 4000px;
 }
 
 img {
@@ -938,4 +937,122 @@ header .badges .badge img {
 .store:active .inner .store__img-3,
 .store:active .inner .store__img-4 {
   opacity: 1;
+}
+
+/* FOOTER */
+footer {
+  position: relative;
+  background-color: #2c2a29;
+  padding: 30px 0;
+}
+
+footer .inner {
+}
+
+/* FOOTER MENU */
+footer .inner .footer__menu {
+  display: flex;
+}
+
+footer .inner .footer__menu .left {
+  width: 90%;
+}
+
+footer .inner .footer__menu .left .menu {
+  display: flex;
+}
+
+footer .inner .footer__menu .left .menu > li {
+  width: 20%;
+}
+
+footer .inner .footer__menu .left .menu > li > ul {
+}
+
+footer .inner .footer__menu .left .menu > li > ul > a {
+  /* display inline 은 margin, padding 먹지 않아서 block 지정 */
+  display: block;
+  font-size: 14px;
+  color: white;
+  margin: 10px 0;
+}
+
+footer .inner .footer__menu .left .menu > li > ul > li {
+  font-size: 12px;
+  color: white;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+footer .inner .footer__menu .left .menu > li > ul > a:hover,
+footer .inner .footer__menu .left .menu > li > ul > li:hover {
+  text-decoration: underline;
+}
+
+footer .inner .footer__menu .right {
+  width: 10%;
+}
+
+footer .inner .footer__menu .right img {
+  float: right;
+}
+
+/* FOOTER SUB-MENU */
+footer .inner .footer__sub-menu {
+  padding: 40px 50px 10px;
+}
+
+footer .inner .footer__sub-menu > ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .inner .footer__sub-menu > ul > li {
+  font-size: 12px;
+}
+
+footer .inner .footer__sub-menu > ul > li.contour {
+  color: #999999;
+}
+
+footer .inner .footer__sub-menu > ul > li > a {
+  color: #cccccc;
+  cursor: pointer;
+}
+
+footer .inner .footer__sub-menu > ul > li:first-child > a {
+  color: #00b050;
+  font-weight: bold;
+}
+
+footer .inner .footer__sub-menu > ul > li > a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER BTN */
+footer .inner .footer__btn {
+  text-align: center;
+}
+
+footer .inner .footer__btn .btn {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+footer .inner .footer__btn .btn:hover {
+  background-color: transparent;
+  text-decoration: underline;
+  color: white;
+}
+
+/* FOOTER COPYRIGHT */
+footer .inner .footer__copylight {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer .inner .footer__copylight p {
+  line-height: 30px;
 }
