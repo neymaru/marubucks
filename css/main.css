@@ -195,6 +195,10 @@ header .inner .sub-menu .search > input:focus {
   width: 190px;
 }
 
+.closeInput {
+  width: 36px;
+}
+
 header .inner .sub-menu .search > input:focus::placeholder {
   /* font-size: 13px; */
   color: #656565;
@@ -266,27 +270,12 @@ header .inner .main-menu .item .item__contents .item__contents__menu .inner {
   display: flex;
 }
 
-header
-  .inner
-  .main-menu
-  .item
-  .item__contents
-  .item__contents__menu
-  .inner
-  > li {
+header .inner .main-menu .item .item__contents .item__contents__menu .inner > li {
   width: 200px;
   padding-right: 20px;
 }
 
-header
-  .inner
-  .main-menu
-  .item
-  .item__contents
-  .item__contents__menu
-  .inner
-  > li
-  > a {
+header .inner .main-menu .item .item__contents .item__contents__menu .inner > li > a {
   /* 텍스트기 때문에 display block 으로 공간을 가져가야 패딩 마진을 줄 수 있음 */
   display: block;
   color: white;
@@ -295,54 +284,20 @@ header
   margin-bottom: 15px;
 }
 
-header
-  .inner
-  .main-menu
-  .item
-  .item__contents
-  .item__contents__menu
-  .inner
-  > li
-  > a:hover {
+header .inner .main-menu .item .item__contents .item__contents__menu .inner > li > a:hover {
   text-decoration: underline;
 }
 
-header
-  .inner
-  .main-menu
-  .item
-  .item__contents
-  .item__contents__menu
-  .inner
-  > li
-  > ul {
+header .inner .main-menu .item .item__contents .item__contents__menu .inner > li > ul {
 }
 
-header
-  .inner
-  .main-menu
-  .item
-  .item__contents
-  .item__contents__menu
-  .inner
-  > li
-  > ul
-  > li {
+header .inner .main-menu .item .item__contents .item__contents__menu .inner > li > ul > li {
   color: #999;
   font-size: 12px;
   margin: 5px 0;
 }
 
-header
-  .inner
-  .main-menu
-  .item
-  .item__contents
-  .item__contents__menu
-  .inner
-  > li
-  > ul
-  > li:hover {
+header .inner .main-menu .item .item__contents .item__contents__menu .inner > li > ul > li:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -397,6 +352,12 @@ header .badges .badge img {
   justify-content: center;
   top: 180px;
   left: -130px;
+  opacity: 0;
+}
+
+.visual.animate .inner .slogan {
+  opacity: 1;
+  transition: 0.4s;
 }
 
 .visual .inner .slogan img {
@@ -417,18 +378,42 @@ header .badges .badge img {
   width: 290px;
   top: 120px;
   left: 340px;
+  opacity: 0;
+}
+
+.visual.animate .inner .item-1 {
+  transition: 0.4s;
+  opacity: 1;
+  /* FIND YOUR LUCK 끝나고 실행 */
+  transition-delay: 0.4s;
 }
 
 .visual .inner .item-2 {
   width: 310px;
   top: 208px;
   left: 538px;
+  opacity: 0;
+}
+
+.visual.animate .inner .item-2 {
+  transition: 0.4s;
+  opacity: 1;
+  /* FIND YOUR LUCK 끝나고 실행 */
+  transition-delay: 0.8s;
 }
 
 .visual .inner .item-3 {
   width: 310px;
   top: 162px;
   left: 762px;
+  opacity: 0;
+}
+
+.visual.animate .inner .item-3 {
+  transition: 0.4s;
+  opacity: 1;
+  /* FIND YOUR LUCK 끝나고 실행 */
+  transition-delay: 1.2s;
 }
 
 /* NOTICE */
@@ -476,11 +461,19 @@ header .badges .badge img {
   left: 0;
   font-size: 16px;
 }
-.notice .notice-line .inner .inner__left div {
+/* ------------------ Swiper -------------------- */
+.notice .notice-line .inner .inner__left .swiper {
   position: absolute;
+  height: 62px;
   left: 80px;
   font-size: 14px;
 }
+
+.notice .notice-line .inner .inner__left .swiper .swiper-wrapper .swiper-slide {
+  height: 62px;
+  line-height: 62px;
+}
+/* ---------------------------------------------- */
 .notice .notice-line .inner .inner__left a {
   color: white;
   position: absolute;
@@ -508,11 +501,113 @@ header .badges .badge img {
   position: absolute;
   right: 20px;
   color: black;
+  transition: 0.4s;
 }
+
+.notice .notice-line .inner .inner__right a.show {
+  transform: rotate(180deg);
+}
+
 .notice .notice-line .inner .inner__right span {
   font-size: 36px;
   /* 수직정렬 */
   display: block;
+}
+
+/* PROMOTION */
+.notice .promotion {
+  position: relative;
+  height: 658px;
+  background-color: #f6f5ef;
+  /* 좌우 스크롤 사라지게 */
+  overflow: hidden;
+  transition: height 0.4s;
+}
+
+.notice .promotion.hide {
+  height: 0px;
+}
+
+.notice .promotion .swiper {
+  position: absolute;
+  /* 이미지 3개 크기와 여백 10px 씩 2개 크기 */
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  top: 40px;
+  /* background-color: orange; */
+  text-align: center;
+  /* 부모 요소를 기준으로 오른쪽으로 50% 이동 */
+  left: 50%;
+  /* 자기 자신 크기의 50%를 이동 */
+  transform: translateX(-50%);
+}
+
+.notice .promotion .swiper .swiper-wrapper {
+}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide {
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide-active {
+  opacity: 1;
+}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide .btn {
+  position: absolute;
+  width: 150px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* .notice .promotion .swiper .swiper-pagination {
+  width: 100px;
+  height: 50px;
+  background-color: black;
+} */
+
+.notice .promotion .swiper-button-prev,
+.notice .promotion .swiper-button-next {
+  position: absolute;
+  top: 250px;
+  width: 55px;
+  height: 55px;
+  border: 2px solid #333;
+  color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.notice .promotion .swiper-button-prev::after,
+.notice .promotion .swiper-button-next::after {
+  font-size: 24px;
+}
+
+.notice .promotion .swiper-button-prev {
+  left: 50%;
+  transform: translateX(-500px);
+}
+
+.notice .promotion .swiper-button-next {
+  right: 50%;
+  transform: translateX(500px);
+}
+
+.notice .promotion .swiper-pagination {
+}
+.notice .promotion .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+.notice .promotion .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_on.png");
+  background-size: cover;
+  background-color: transparent;
 }
 
 /* REWARDS */
@@ -547,7 +642,7 @@ header .badges .badge img {
 .rewards .inner .rewards__items .rewards__items__register {
   position: relative;
   padding-bottom: 12px;
-  border-bottom: 0 0.5px #c8c8c8;
+  box-shadow: 0 0.5px #c8c8c8;
 }
 
 .rewards .inner .rewards__items .rewards__items__register p {
@@ -567,12 +662,7 @@ header .badges .badge img {
   bottom: 12px;
 }
 
-.rewards
-  .inner
-  .rewards__items
-  .rewards__items__register
-  .buttons
-  .btn--register {
+.rewards .inner .rewards__items .rewards__items__register .buttons .btn--register {
   background-color: #00704a;
   border-color: #00704a;
   color: white;
@@ -580,19 +670,8 @@ header .badges .badge img {
   font-weight: 700;
 }
 
-.rewards
-  .inner
-  .rewards__items
-  .rewards__items__register
-  .buttons
-  .btn--register
-  :hover,
-.rewards
-  .inner
-  .rewards__items
-  .rewards__items__cards
-  .buttons
-  .btn--login:hover {
+.rewards .inner .rewards__items .rewards__items__register .buttons .btn--register :hover,
+.rewards .inner .rewards__items .rewards__items__cards .buttons .btn--login:hover {
   text-decoration: underline;
 }
 
@@ -662,8 +741,8 @@ header .badges .badge img {
   transition: 2.5s;
 }
 
-.elsalvador:active .inner .elsalvador__item,
-.elsalvador:active .inner .elsalvador__contents {
+.elsalvador.animate .inner .elsalvador__item,
+.elsalvador.animate .inner .elsalvador__contents {
   opacity: 1;
   transform: translateX(0);
 }
@@ -716,8 +795,8 @@ header .badges .badge img {
   opacity: 0;
 }
 
-.ethiopia:active::before,
-.ethiopia:active::after {
+.ethiopia.animate::before,
+.ethiopia.animate::after {
   transition: 1.5s;
   opacity: 1;
 }
@@ -740,7 +819,7 @@ header .badges .badge img {
   opacity: 0;
 }
 
-.ethiopia:active .inner .ethiopia__item {
+.ethiopia.animate .inner .ethiopia__item {
   transition: 1.5s;
   /* 0.8초 기다렸다가 실행 */
   transition-delay: 0.8s;
@@ -777,8 +856,8 @@ header .badges .badge img {
   opacity: 0;
 }
 
-.favorite:active .inner .favorite__text-1,
-.favorite:active .inner .favorite__text-2 {
+.favorite.animate .inner .favorite__text-1,
+.favorite.animate .inner .favorite__text-2 {
   transform: translateX(0);
   opacity: 1;
 }
@@ -835,7 +914,7 @@ header .badges .badge img {
   transition: 1.5s;
 }
 
-.magazine:active .inner .magazine__img {
+.magazine.animate .inner .magazine__img {
   opacity: 1;
 }
 
@@ -879,17 +958,16 @@ header .badges .badge img {
   transition: 2.5s;
 }
 
-.store:active .inner .store__text-1,
-.store:active .inner .store__text-2 {
+.store.animate .inner .store__text-1,
+.store.animate .inner .store__text-2 {
   opacity: 1;
   transform: translateX(0);
 }
 
-.store:active .inner .btn.btn--black {
+.store.animate .inner .btn.btn--black {
   opacity: 1;
   transform: translateX(0);
-  transition: transform 3s, background-color 0.6s, color 0.6s,
-    text-decoration 0.6s;
+  transition: transform 3s, background-color 0.6s, color 0.6s, text-decoration 0.6s;
 }
 
 .store .inner .store__img-1 {
@@ -932,10 +1010,10 @@ header .badges .badge img {
   transform: translateX(800px);
 }
 
-.store:active .inner .store__img-1,
-.store:active .inner .store__img-2,
-.store:active .inner .store__img-3,
-.store:active .inner .store__img-4 {
+.store.animate .inner .store__img-1,
+.store.animate .inner .store__img-2,
+.store.animate .inner .store__img-3,
+.store.animate .inner .store__img-4 {
   opacity: 1;
 }
 

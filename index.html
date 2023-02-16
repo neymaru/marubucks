@@ -33,10 +33,7 @@
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet" />
 
     <!-- ICONS -->
     <link
@@ -45,13 +42,18 @@
     />
 
     <!-- RESET CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- JAVASCRIPT -->
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- MAIN JAVASCRIPT-->
+    <script defer src="./js/main.js"></script>
   </head>
 
   <body>
@@ -71,7 +73,7 @@
             <li><a href="#">Find a Store</a></li>
           </ul>
           <div class="search">
-            <input type="text" placeholder="통합검색" />
+            <input type="text" />
             <span class="material-symbols-outlined"> search </span>
           </div>
         </div>
@@ -399,21 +401,9 @@
           <img src="./images/visual_slogan.png" alt="스타벅스 슬로건 2023" />
           <a href="#" class="btn btn--light-green">자세히 보기</a>
         </div>
-        <img
-          src="./images/visual_item_1.png"
-          alt="골든 미모사 그린 티"
-          class="item-1"
-        />
-        <img
-          src="./images/visual_item_2.png"
-          alt="블랙 햅쌀 고봉 라떼"
-          class="item-2"
-        />
-        <img
-          src="./images/visual_item_3.png"
-          alt="스타벅스 튜메릭 라떼"
-          class="item-3"
-        />
+        <img src="./images/visual_item_1.png" alt="골든 미모사 그린 티" class="item-1" />
+        <img src="./images/visual_item_2.png" alt="블랙 햅쌀 고봉 라떼" class="item-2" />
+        <img src="./images/visual_item_3.png" alt="스타벅스 튜메릭 라떼" class="item-3" />
       </div>
     </section>
 
@@ -424,19 +414,47 @@
         <div class="bg-right"></div>
         <div class="inner">
           <div class="inner__left">
+            <!-- SWIPER -->
             <h1>공지사항</h1>
-            <div>탄소중립포인트제 도입 안내</div>
-            <a href="#"
-              ><span class="material-symbols-outlined"> add_circle </span></a
-            >
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">탄소중립실천포인트제 도입 안내</div>
+                <div class="swiper-slide">영상정보처리기기 운영방침 / 위치정보 이용약관 / 개인정보처리방침 이용약관 개정 안내</div>
+                <div class="swiper-slide">시스템 개선 및 서비스 점검 안내</div>
+                <div class="swiper-slide">설 연휴 스타벅스 딜리버스 운영 안내</div>
+                <div class="swiper-slide">스타벅스 카드 온라인 재충전 / e-Gift Card 구매 가능 금액 안내</div>
+              </div>
+            </div>
+            <a href="javascript:void(0);" onclick="controlAutoPlay()"><span class="material-symbols-outlined"> add_circle </span></a>
           </div>
           <div class="inner__right">
             <h1>스타벅스 프로모션</h1>
-            <a href="#"
-              ><span class="material-symbols-outlined"> check_circle </span></a
-            >
+            <a href="javascript:void(0);" class="toggle-promotion">
+              <span class="material-symbols-outlined"> expand_circle_down </span>
+            </a>
           </div>
         </div>
+      </div>
+      <div class="promotion hide">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/promotion1.jpg" alt="스타벅스 프로모션 1" />
+              <a href="#" class="btn btn-black">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion2.jpg" alt="스타벅스 프로모션 2" />
+              <a href="#" class="btn btn-black">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion3.jpg" alt="스타벅스 프로모션 3" />
+              <a href="#" class="btn btn-black">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </section>
 
@@ -453,10 +471,8 @@
               <span class="strong">스타벅스 리워드</span>
             </p>
             <p>
-              <span class="strong">스타벅스 회원이세요?</span> 로그인을 통해
-              나만의 리워드를 확인해보세요.<br />
-              <span class="strong">스타벅스 회원이 아니세요?</span> 가입을 통해
-              리워드 혜택을 즐기세요.
+              <span class="strong">스타벅스 회원이세요?</span> 로그인을 통해 나만의 리워드를 확인해보세요.<br />
+              <span class="strong">스타벅스 회원이 아니세요?</span> 가입을 통해 리워드 혜택을 즐기세요.
             </p>
 
             <div class="buttons">
@@ -466,10 +482,8 @@
           </div>
           <div class="rewards__items__cards">
             <p>
-              회원 가입 후, 스타벅스 e-Gift Card를 "나에게 선물하기"로
-              구매하시고, 편리하게 등록하세요!<br />
-              카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면
-              무료 음료 쿠폰을 드립니다!
+              회원 가입 후, 스타벅스 e-Gift Card를 "나에게 선물하기"로 구매하시고, 편리하게 등록하세요!<br />
+              카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면 무료 음료 쿠폰을 드립니다!
             </p>
             <div class="buttons">
               <a href="#" class="btn btn--login">e-Gift Card 선물하기</a>
@@ -484,17 +498,9 @@
     <!-- ELSALVADOR -->
     <section class="elsalvador">
       <div class="inner">
-        <img
-          src="./images/elsalvador_item.png"
-          alt="엘살바도르 커피"
-          class="elsalvador__item"
-        />
+        <img src="./images/elsalvador_item.png" alt="엘살바도르 커피" class="elsalvador__item" />
         <div class="elsalvador__contents">
-          <img
-            src="./images/elsalvador_text.png"
-            alt="엘살바도르 커피 설명"
-            class="item-text"
-          />
+          <img src="./images/elsalvador_text.png" alt="엘살바도르 커피 설명" class="item-text" />
           <a href="#" class="btn btn--brown">자세히 보기</a>
         </div>
       </div>
@@ -503,16 +509,8 @@
     <!-- ETHIOPIA -->
     <section class="ethiopia">
       <div class="inner">
-        <img
-          src="./images/ethiopia_text.png"
-          alt="ETHIOPIA"
-          class="ethiopia__contents"
-        />
-        <img
-          src="./images/ethiopia_item.png"
-          alt="ETHIOPIA"
-          class="ethiopia__item"
-        />
+        <img src="./images/ethiopia_text.png" alt="ETHIOPIA" class="ethiopia__contents" />
+        <img src="./images/ethiopia_item.png" alt="ETHIOPIA" class="ethiopia__item" />
         <a href="#" class="btn btn--gold">자세히 보기</a>
       </div>
     </section>
@@ -520,21 +518,9 @@
     <!-- FAVORITE -->
     <section class="favorite">
       <div class="inner">
-        <img
-          src="./images/fav_text1.png"
-          alt="스타벅스 최애 설명 1"
-          class="favorite__text-1"
-        />
-        <img
-          src="./images/fav_text2.png"
-          alt="스타벅스 최애 설명 2"
-          class="favorite__text-2"
-        />
-        <img
-          src="./images/fav_img.png"
-          alt="스타벅스 fav 이미지"
-          class="favorite__img"
-        />
+        <img src="./images/fav_text1.png" alt="스타벅스 최애 설명 1" class="favorite__text-1" />
+        <img src="./images/fav_text2.png" alt="스타벅스 최애 설명 2" class="favorite__text-2" />
+        <img src="./images/fav_img.png" alt="스타벅스 fav 이미지" class="favorite__img" />
         <a href="#" class="btn btn--white">자세히 보기</a>
       </div>
     </section>
@@ -542,16 +528,8 @@
     <!-- MAGAZINE -->
     <section class="magazine">
       <div class="inner">
-        <img
-          src="./images/magazine_text.png"
-          alt="매거진 설명"
-          class="magazine__text"
-        />
-        <img
-          src="./images/magazine_img.png"
-          alt="매거진 이미지"
-          class="magazine__img"
-        />
+        <img src="./images/magazine_text.png" alt="매거진 설명" class="magazine__text" />
+        <img src="./images/magazine_img.png" alt="매거진 이미지" class="magazine__img" />
         <a href="#" class="btn btn--black">자세히 보기</a>
       </div>
     </section>
@@ -559,36 +537,12 @@
     <!-- STORE -->
     <section class="store">
       <div class="inner">
-        <img
-          src="./images/store_text1.png"
-          alt="스토어 설명"
-          class="store__text-1"
-        />
-        <img
-          src="./images/store_text2.png"
-          alt="스토어 설명"
-          class="store__text-2"
-        />
-        <img
-          src="./images/store_img1.png"
-          alt="스토어 이미지"
-          class="store__img-1"
-        />
-        <img
-          src="./images/store_img2.png"
-          alt="스토어 이미지"
-          class="store__img-2"
-        />
-        <img
-          src="./images/store_img3.png"
-          alt="스토어 이미지"
-          class="store__img-3"
-        />
-        <img
-          src="./images/store_img4.png"
-          alt="스토어 이미지"
-          class="store__img-4"
-        />
+        <img src="./images/store_text1.png" alt="스토어 설명" class="store__text-1" />
+        <img src="./images/store_text2.png" alt="스토어 설명" class="store__text-2" />
+        <img src="./images/store_img1.png" alt="스토어 이미지" class="store__img-1" />
+        <img src="./images/store_img2.png" alt="스토어 이미지" class="store__img-2" />
+        <img src="./images/store_img3.png" alt="스토어 이미지" class="store__img-3" />
+        <img src="./images/store_img4.png" alt="스토어 이미지" class="store__img-4" />
         <a href="#" class="btn btn--black">매장 찾기</a>
       </div>
     </section>
